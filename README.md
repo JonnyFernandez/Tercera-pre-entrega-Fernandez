@@ -1,9 +1,30 @@
 # Poryecto BLOG
 
-- 1 Instalar entonrno virtual en la carpeta del proyecto
+- 1 Instalar entorno virtual en la carpeta del proyecto
+
+```
+- Si operas con pipenv: pipenv install
+- Si operas con virtualenv: virtualenv venv
+```
+
 - 2 Activar entorno virtual
-- 3 Instalar las dependencias: `pip install -r requirements.txt`
+
+```
+- Si operas con pipenv: pipenv shell
+- Si operas con virtualenv: ./venv/scripts/activate
+```
+
+- 3 Instalar las dependencias:
+
+```
+pip install -r requirements.txt
+```
+
 - 4 Levantar el servidor
+
+```
+python manage.py runserver
+```
 
 ## Operaciones en la Blog-Site
 
@@ -51,6 +72,14 @@ Opcion para agregar una reseña
 
 ## Nota
 
-- creacion del archivo requirements.txt: `pip freeze > requirements.txt`
+- Creacion del archivo requirements.txt:
 
-* para instalar las dependencias: `pip install -r requirements.txt`
+```
+pip freeze > requirements.txt
+```
+
+- para instalar las dependencias:
+
+```
+pip install -r requirements.txt
+```
