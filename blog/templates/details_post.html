@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<h1 class="details-posts-title">Post Details</h1>
+
+<div class="detail-container">
+   
+    <div class="left">
+        <div class="title-detail">{{one_posts.title}}</div>
+
+        <div class="category-detail">Cateroria: {{one_posts.category}}</div>
+        <div class="description-detail">
+            <p>{{one_posts.description}}</p>
+             
+        </div>
+        <div class="date-detail">Publicado: {{one_posts.date|date:'M d Y'}}</div> 
+        <div class="add-reviews">
+          
+            <form action="" method="post" class="form-review">
+                {% csrf_token %} 
+                {{ reviews_form }}                
+                <button type="submit">Comentar</button>
+            </form>           
+            
+        </div>       
+    </div>
+
+    <div class="right">
+      
+        <div class="all-reviews">
+            {% for x in reviews %}
+               <div class="detail-card">
+                   <h4>Usuario: {{x.name}}</h4>
+                   <p class="descrip-detail">{{x.description}}</p>
+                </div>
+
+                
+                {% endfor %}
+            
+        </div>
+        
+    </div>
+   
+   
+        
+</div>
+        
+    
+    
+
+{% endblock content %}

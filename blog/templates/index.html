@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+<div class="titulo-blog">
+   
+    <div class="search-bar">
+        <form method="GET" action=".">
+            {{ search_form.as_p }}
+            <button type="submit">Buscar</button>
+        </form>
+       
+    </div>
+</div>
+
+<div class="index-container">
+    
+    {% for post in posts %}
+    <div class="card">
+        <h3>{{post.title}}</h3>
+        <div class="containerCard">
+            <p> Description: {{post.description|truncatechars:30 }}</p>
+            <p> Category: {{post.category}}</p>
+            <p>Date: {{post.date|date:'M d Y'}}</p>
+        </div>
+
+        <div class="botoneraCard">
+            <a href="{% url 'blog:details' post.id %}">Details</a> 
+            <span>{{ post.reviews.count }} Reviews</span>
+        </div>
+    </div>
+        
+    {% endfor %}
+</div>
+        
+    
+<!-- <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. In voluptatem sed soluta magnam nihil molestiae quisquam animi nulla numquam, laudantium, cupiditate ipsa. Placeat amet quisquam corporis unde sed non debitis assumenda ullam sapiente officiis! Voluptatem, dolorum recusandae sed vitae, tempora fugiat ea, vel modi illum architecto quidem quaerat reprehenderit debitis!</p>     -->
+
+{% endblock content %}

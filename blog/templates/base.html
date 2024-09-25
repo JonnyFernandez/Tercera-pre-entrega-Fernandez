@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% load static %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tercera-Pre-Entrega-Fernandez</title>
+    <link rel="stylesheet" href="{% static 'base.css' %}">
+</head>
+<body>
+    <nav>
+     
+        <a href="/" class="title">Home</a>
+     
+     
+     <ul>
+        <li>
+            <a href="{% url 'blog:post' %}"> Post </a>
+        </li>
+        <li>
+            <a href="{% url 'blog:category' %}"> Categoria </a> 
+        </li>
+     </ul>
+    </nav>
+
+    <div class="container">
+        {% block content %}
+        {% endblock %}
+    </div>
+    <div class="footer">pie de pagina</div>
+</body>
+</html>
